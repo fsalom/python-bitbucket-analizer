@@ -5,7 +5,7 @@ import os
 import csv
 from collections import defaultdict
 from datetime import datetime, timedelta
-from config import BITBUCKET_USERNAME, BITBUCKET_APP_PASSWORD
+from config import BITBUCKET_USERNAME, BITBUCKET_APP_PASSWORD, wage_per_min
 
 
 def get_repositories():
@@ -103,8 +103,6 @@ def analyze_commits(repo_path):
 if __name__ == "__main__":
     val = input("Enter your git repo: ")
     print(val)
-
-
 
     overall_stats = defaultdict(lambda: defaultdict(
         lambda: {'added': 0, 'removed': 0, 'commits': 0, 'large_commits': 0, 'bad_messages': 0, 'files_changed': 0,
